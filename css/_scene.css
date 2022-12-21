@@ -1,0 +1,79 @@
+#sky {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all 3s ease;
+}
+#sky.visible {
+    background-color: var(--blue-night);
+}
+
+#ground{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+    z-index: 50;
+}
+#ground.visible {
+    transform: translateY(0%);
+}
+
+
+#tree1 {
+    position: fixed;
+    bottom: 10vw;
+    right: 0;
+    width: 21vw;
+    transform: translateX(100%);
+    z-index: 51;
+}
+
+#tree2,
+#tree3 {
+    position: fixed;
+    bottom: 7vw;
+    left: 0;
+    width: 25vw;
+    transform: translateX(-100%);
+    z-index: 51;
+}
+
+#tree3 {
+    bottom: 9vw;
+    width: 30vw;
+}
+
+#mountains {
+    position: fixed;
+    bottom: 27vw;
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+    opacity: 0;
+    z-index: 10;
+}
+#houses {
+    position: fixed;
+    bottom: 24vw;
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+    opacity: 0;
+    z-index: 11;
+}
+
+#moon {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+    mix-blend-mode: lighten;
+    width: 31vw;
+    visibility: hidden;
+    z-index: 0;
+}
