@@ -9,7 +9,6 @@ new ScrollMagic.Scene({
     duration: 0
 })
     .setClassToggle('#sky', 'visible')
-    .addIndicators() // add indicators (requires plugin)
     .addTo(controller);
 
 const tweenImgBottom = TweenMax.to("#ground", 1, {y: 0});
@@ -19,7 +18,6 @@ new ScrollMagic.Scene({
     duration: '100%'
 })
     .setTween(tweenImgBottom)
-    .addIndicators() // add indicators (requires plugin)
     .addTo(controller);
 
 
@@ -29,7 +27,6 @@ new ScrollMagic.Scene({
     duration: 500
 })
     .setTween('#tree1', {x: '34%'})
-    .addIndicators() // add indicators (requires plugin)
     .addTo(controller);
 
 new ScrollMagic.Scene({
@@ -38,7 +35,6 @@ new ScrollMagic.Scene({
     duration: 600
 })
     .setTween('#tree2', {x: '0'})
-    .addIndicators() // add indicators (requires plugin)
     .addTo(controller);
 
 new ScrollMagic.Scene({
@@ -47,7 +43,6 @@ new ScrollMagic.Scene({
     duration: 2000
 })
     .setTween('#tree3', {x: '-40%'})
-    .addIndicators() // add indicators (requires plugin)
     .addTo(controller);
 
 new ScrollMagic.Scene({
@@ -55,8 +50,7 @@ new ScrollMagic.Scene({
     // triggerHook: "onEnter",
     duration: 500
 })
-    .setTween('#mountains', {y: '0', opacity: 1})
-    .addIndicators() // add indicators (requires plugin)
+    .setTween('#mountains', {y: 0, opacity: 1})
     .addTo(controller);
 
 new ScrollMagic.Scene({
@@ -64,8 +58,7 @@ new ScrollMagic.Scene({
     // triggerHook: "onEnter",
     duration: 800
 })
-    .setTween('#houses', {y: '0', opacity: 1})
-    .addIndicators() // add indicators (requires plugin)
+    .setTween('#houses', {y: 0, opacity: 1})
     .addTo(controller);
 
 new ScrollMagic.Scene({
@@ -74,5 +67,33 @@ new ScrollMagic.Scene({
     duration: 800
 })
     .setTween('#moon', {bottom: '24vw', visibility: 'visible'})
-    .addIndicators() // add indicators (requires plugin)
+    .addTo(controller);
+
+new ScrollMagic.Scene({
+    triggerElement: "#trigger-truck",
+    // triggerHook: "onEnter",
+    duration: 800
+})
+    .setTween('#truck', {x: '-50%', left: '50%'})
+    .addTo(controller);
+
+new ScrollMagic.Scene({
+    triggerElement: "#trigger-text",
+    // triggerHook: "onEnter",
+    duration: 0
+})
+    .setClassToggle('#text', 'visible')
+    .addTo(controller);
+
+
+new ScrollMagic.Scene({
+    triggerElement: "#trigger-video",
+    // triggerHook: "onEnter",
+    duration: 500
+})
+    .on("enter", function (event) {
+        const video = document.getElementById('video-player')
+        video.play();
+    })
+    .setClassToggle('#video-container', 'visible')
     .addTo(controller);
