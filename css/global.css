@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+body.started {
+    overflow: auto;
+}
+#start {
+    position: fixed;
+    appearance: none;
+    user-select: none;
+    background-color: var(--blue-night);
+    border: none;
+    padding: 2rem;
+    font-size: clamp(1rem, 5vw, 3rem);
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    cursor: pointer;
+    z-index: 1000;
+}
+body.started #start {
+    display: none;
+}
+.min-vh-full {
+    min-height: 100vh;
+}

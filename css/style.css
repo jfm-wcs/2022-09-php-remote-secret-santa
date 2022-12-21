@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-@import "_variable.css";
-@import "_global.css";
-@import "_scene.css";
-@import "_snow.css";
+@import "variable.css";
+@import "global.css";
+@import "scene.css";
+@import "snow.css";

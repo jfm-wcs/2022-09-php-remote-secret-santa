@@ -1,3 +1,8 @@
+const startButton = document.getElementById('start')
+startButton.addEventListener('click', function () {
+    document.querySelector('body').classList.add('started')
+})
+
 const vw = (coef) => window.innerWidth * (coef / 100)
 // init controller
 const controller = new ScrollMagic.Controller();
