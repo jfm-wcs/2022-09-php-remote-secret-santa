@@ -1,6 +1,14 @@
-const startButton = document.getElementById('start')
+const startButton = document.getElementById('start');
+const body = document.querySelector('body');
+const showScroll = function() {
+    body.classList.add('started');
+}
+const hideScroll = function() {
+    body.classList.remove('started');
+}
 startButton.addEventListener('click', function () {
-    document.querySelector('body').classList.add('started')
+    startButton.classList.add('hidden');
+    showScroll();
 })
 
 const vw = (coef) => window.innerWidth * (coef / 100)
@@ -90,15 +98,26 @@ new ScrollMagic.Scene({
     .setClassToggle('#text', 'visible')
     .addTo(controller);
 
-
+const video = document.getElementById('video-player');
 new ScrollMagic.Scene({
     triggerElement: "#trigger-video",
     // triggerHook: "onEnter",
-    duration: 500
+    duration: 0
 })
     .on("enter", function (event) {
-        const video = document.getElementById('video-player')
         video.play();
+        hideScroll();
+
     })
     .setClassToggle('#video-container', 'visible')
     .addTo(controller);
+video.addEventListener('mouseover', function (event) {
+    event.currentTarget.setAttribute('controls', true)
+});
+video.addEventListener('ended', function (event) {
+    showScroll();
+    document.getElementById('video-container').classList.remove('visible');
+});
+video.addEventListener('pause', function (event) {
+    showScroll();
+});
